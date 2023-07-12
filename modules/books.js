@@ -6,12 +6,12 @@ export default class Book {
   constructor() {
     this.bookLibrary = JSON.parse(localStorage.getItem('jsonLibrary')) || [];
   }
-  
+
   insertHtml() {
     bookSection.innerHTML = '';
     this.bookLibrary.forEach((n) => {
-      bookSection.innerHTML += 
-      `<div class='book'>
+      bookSection.innerHTML
+      += `<div class='book'>
       <div class='bookDetail'>
       <p>"${n.title}"</p>
       <p>by</p>
@@ -36,12 +36,13 @@ export default class Book {
     localStorage.setItem('jsonLibrary', JSON.stringify(this.bookLibrary));
     this.insertHtml();
   }
-  
+
   remove(idParameter) {
     this.bookLibrary = this.bookLibrary.filter((book) => book.id !== idParameter);
     localStorage.setItem('jsonLibrary', JSON.stringify(this.bookLibrary));
     this.insertHtml();
   }
 }
+// eslint-disable-next-line
 let bookList = new Book();
 export { bookList };
