@@ -15,13 +15,13 @@ const addlistbtn = document.querySelector('#addlistbtn');
 const contactbtn = document.querySelector('#contactbtn');
 
 window.addEventListener('load', () => {
-    if (localStorage.getItem('jsonLibrary')) {
-        bookList.insertHtml();
-    }
-    list.style.display = 'flex';
-    newbooks.style.display = 'none';
-    contact.style.display = 'none';
-  });
+  if (localStorage.getItem('jsonLibrary')) {
+    bookList.insertHtml();
+  }
+  list.style.display = 'flex';
+  newbooks.style.display = 'none';
+  contact.style.display = 'none';
+});
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
