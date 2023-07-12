@@ -20,7 +20,7 @@ export default class Book {
       <button id='${n.id}' class='remove' type='button'>Remove</button>
       </div>`;
     });
-    document.querySelectorAll('.remove').forEach(node => {
+    document.querySelectorAll('.remove').forEach((node) => {
       node.addEventListener('click', () => {
         this.remove(node.id);
       });
